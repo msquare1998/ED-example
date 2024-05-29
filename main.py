@@ -16,10 +16,16 @@ nQ = L = 6
 beta = 5
 J = 1
 h = 1
+"""
+    In stochastic series expansion (SSE), the Hamiltonian is shifted.
+    Turn on the ```shift``` if comparing with the SSE program on my github
+"""
+shift = True
 
 if __name__ == "__main__":
     print(f"# L = {L}, beta = {beta}, J = {J}, h = {h}")
-    H = aux.makeH_1D(L, J, h)
+
+    H = aux.makeH_1D_shift(L, J, h) if shift else aux.makeH_1D(L, J, h)
     """ -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
         Calculating the energy
     -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ """
